@@ -6,11 +6,5 @@ pipeline {
                     sh './mvnw clean package'
             }
         }
-
-        post {
-             success {
-                    archiveArtifacts artifacts: '**/target/*.jar'
-            }
-        }
     }
 }
