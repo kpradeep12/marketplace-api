@@ -6,5 +6,10 @@ pipeline {
                     sh './mvnw clean package'
             }
         }
+        stage('Build & Publish Image') {
+             steps {
+                    sh './mvnw jib:build'
+             }
+        }
     }
 }
