@@ -62,6 +62,10 @@
 					</from>
 					<to>
 						<image>docker.io/kpradeep12/${project.artifactId}</image>
+						<auth>
+							<username>${DOCKER_REGISTRY_USER}</username>
+							<password>${DOCKER_REGISTRY_PASSWORD}</password>
+						</auth>
 					</to>
 				</configuration>
 			</plugin>
