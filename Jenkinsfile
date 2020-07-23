@@ -14,7 +14,9 @@ pipeline {
         }
         stage('Build & Publish Image') {
              steps {
-                    sh './mvnw jib:build'
+                 withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_REGISTRY_USER', passwordVariable: 'DOCKER_REGISTRY_PASSWORD')]) {
+                   sh './mvnw -DDOCKER_REGISTRY_USER=$DOCKER_REGISTRY_USER -DDOCKER_REGISTRY_PASSWORD=$DOCKER_REGISTRY_PASSWORD jib:build'
+                 }
              }
         }
     }
