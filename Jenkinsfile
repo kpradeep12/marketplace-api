@@ -7,8 +7,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                    echo "DOCKER_REGISTRY_USER ${DOCKER_REGISTRY_USER}"
-                    echo "DOCKER_REGISTRY_PASSWORD ${DOCKER_REGISTRY_PASSWORD}"
                     sh './mvnw clean package'
             }
         }
